@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+    microservice-1:
+        build: ./microservice-1
+        volumes:
+            - ./microservice-1/src:/home/node/app
+        expose:
+            - '8080'
+    website:
+        build: ./static-file-server
+        volumes: 
+            - ./static-file-server/static-content:/usr/share/nginx/html
+        ports:
+            - 80:80
+        depends_on: 
+            - microservice-1
