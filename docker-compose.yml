@@ -8,9 +8,10 @@ services:
         expose:
             - '8080'
     website:
-        build: ./static-file-server
+        image: nginx:1.17-alpine
         volumes: 
             - ./static-file-server/static-content:/usr/share/nginx/html
+            - ./static-file-server/nginx-config/reverse-proxy.conf:/etc/nginx/nginx.conf
         ports:
             - 80:80
         depends_on: 
