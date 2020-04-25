@@ -4,7 +4,7 @@ services:
     microservice-1:
         build: ./microservice-1
         volumes:
-            - ./microservice-1/src:/home/node/app
+            - ./microservice-1/app.js:/usr/src/app/app.js
         expose:
             - '8080'
     website:
