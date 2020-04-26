@@ -3,6 +3,7 @@ version: '3'
 services:
     microservice-1:
         build: ./microservice-1
+        image: yourdockeruser/project/microservice-1
         volumes:
             - ./microservice-1/app.js:/usr/src/app/app.js
         expose:
@@ -10,16 +11,17 @@ services:
 
     microservice-2:
         build: ./microservice-2
+        image: yourdockeruser/project/microservice-2
         volumes:
             - ./microservice-2:/usr/src/app
         expose:
             - '8080'
 
     website:
-        image: nginx:1.17-alpine
+        build: ./static-file-server
+        image: yourdockeruser/project/website
         volumes: 
             - ./static-file-server/static-content:/usr/share/nginx/html
-            - ./static-file-server/nginx-config/reverse-proxy.conf:/etc/nginx/nginx.conf
         ports:
             - 80:80
         depends_on: 
