@@ -3,7 +3,7 @@ version: '3'
 services:
     microservice-1:
         build: ./microservice-1
-        image: yourdockeruser/project/microservice-1
+        # image: yourdockeruser/microservice_project_microservice-1
         volumes:
             - ./microservice-1/app.js:/usr/src/app/app.js
         expose:
@@ -11,7 +11,7 @@ services:
 
     microservice-2:
         build: ./microservice-2
-        image: yourdockeruser/project/microservice-2
+        # image: yourdockeruser/microservice_project_microservice-2
         volumes:
             - ./microservice-2:/usr/src/app
         expose:
@@ -19,7 +19,7 @@ services:
 
     website:
         build: ./static-file-server
-        image: yourdockeruser/project/website
+        # image: yourdockeruser/microservice_project_website
         volumes: 
             - ./static-file-server/static-content:/usr/share/nginx/html
         ports:
