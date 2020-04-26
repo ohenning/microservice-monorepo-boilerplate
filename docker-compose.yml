@@ -7,6 +7,14 @@ services:
             - ./microservice-1/app.js:/usr/src/app/app.js
         expose:
             - '8080'
+
+    microservice-2:
+        build: ./microservice-2
+        volumes:
+            - ./microservice-2:/usr/src/app
+        expose:
+            - '8080'
+
     website:
         image: nginx:1.17-alpine
         volumes: 
@@ -16,3 +24,4 @@ services:
             - 80:80
         depends_on: 
             - microservice-1
+            - microservice-2

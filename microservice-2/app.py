@@ -2,7 +2,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/micro2")
 def micro2():
     return "This is Microservice 2!"
 
