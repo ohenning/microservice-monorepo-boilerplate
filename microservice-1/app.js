@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
 
-app.get('/*', function (req, res) {
-  res.send('This is microservice 1!!!!');
+app.get('/micro1', function (req, res) {
+  res.send('This is Microservice 1!');
 });
 
 app.listen(8080, function () {
