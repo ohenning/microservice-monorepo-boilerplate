@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+    microservice-1:
+        # Uncomment the line below and add your docker user instead of 'yourdockeruser'
+        # image: yourdockeruser/microservice_project_microservice-1
+        expose:
+            - '8080'
+
+    microservice-2:
+        # Uncomment the line below and add your docker user instead of 'yourdockeruser'
+        # image: yourdockeruser/microservice_project_microservice-2
+        expose:
+            - '8080'
+
+    website:
+        # Uncomment the line below and add your docker user instead of 'yourdockeruser'
+        # image: yourdockeruser/microservice_project_website
+        ports:
+            - 80:80
+        depends_on: 
+            - microservice-1
+            - microservice-2
