@@ -1,5 +1,5 @@
 # microservice-monorepo-boilerplate
-This repo holds a simple blueprint for a starting point to a microservice architecture application using docker and docker compose. It contains a couple example services and configurations to demonstrate the dependencies and the architecture mechanism. It does **not** contain any business logic or domain specific configuration and is not meant to do.
+This repo holds a simple blueprint for a starting point to a small microservice architecture application using docker and docker compose. It contains a couple example services and configurations to demonstrate the dependencies and the architecture mechanism. It does **not** contain any business logic or domain specific configuration and is not meant to do.
 
 ## Getting started
 #### Prerequisites
@@ -17,7 +17,7 @@ In your terminal navigate to the location of `docker-compose.yml` - it's at this
 
 Run `docker-compose up` OR `docker-compose up -d` to run the containers in detach mode.
 
-## Archtiecture and components
+## Components
 The above step spins up 3 containers:
 1. website
 2. microservice-1
